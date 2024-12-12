@@ -7,9 +7,10 @@ import jakarta.persistence.Table;
 import org.hibernate.annotations.SQLRestriction;
 
 @Entity
-@Table(name="p_payment")
+@Table(name="p_transaction_log")
 @SQLRestriction("deleted=false")
-public class PaymentModel {
+
+public class PaymentLogModel {
     @Column(name="transaction_date")
     private String transactionDate;
     @Id
@@ -27,4 +28,11 @@ public class PaymentModel {
     private double amount;
     @Column(name="status")
     private String status;
+
+
+
+
+
+
+
 }
