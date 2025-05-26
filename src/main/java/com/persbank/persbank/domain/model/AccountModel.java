@@ -5,12 +5,11 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.*;
-import org.hibernate.annotations.SQLRestriction;
 
 @Data
 @Entity
 @Table(name="p_account_details")
-@SQLRestriction("deleted=false")
+//@SQLRestriction("deleted=false")
 public class AccountModel {
     @Id
     @Column(name = "account_number")
@@ -25,6 +24,12 @@ public class AccountModel {
 
     @Column(name="account_status")
     private String accountStatus;
+
+    @Column(name="account_type")
+    private String accountType;
+
+    @Column(name="account_balance")
+    private Long accountBalance;
 
     @Column(name = "date_created")
     private String dateCreated;
