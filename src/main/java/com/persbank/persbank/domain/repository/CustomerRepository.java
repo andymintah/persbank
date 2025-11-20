@@ -10,7 +10,7 @@ import java.util.Optional;
 
 @Repository
 public interface CustomerRepository extends CrudRepository<CustomerModel,Integer> {
-    List<CustomerModel> findByName(String lastName);
+    List<CustomerModel> findByCustomerLastName(String lastName);
 
     CustomerModel findByCustomerNo(Integer customerNo);
 }
