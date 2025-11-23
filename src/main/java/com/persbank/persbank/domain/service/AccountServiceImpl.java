@@ -18,17 +18,30 @@ public class AccountServiceImpl implements AccountService{
 
     @Override
     public AccountModel getAccountByAccountNo(Integer accountNo) {
-        return null;
+        AccountModel accountModel = accountRepository.findByAccountNo(accountNo);
+
+        if (accountModel == null){
+            log.error("Account not found for accountNo: {}", accountNo);
+            return null;
+        }
+        return accountModel;
     }
 
     @Override
     public AccountModel getAccountByCustomerNo(Integer customerNo) {
-        return null;
+        AccountModel accountModel = accountRepository.findByCustomerNo(customerNo);
+
+        if (accountModel == null){
+            log.error("Account not found for customerNo: {}", customerNo);
+            return null;
+        }
+        return accountModel;
     }
 
     @Override
     public AccountModel createAccount(AccountModel accountModel) {
-        return null;
+        AccountModel savedAccount = accountRepository.save(accountModel);
+        return savedAccount;
     }
 
     @Override
