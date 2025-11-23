@@ -10,6 +10,7 @@ import lombok.*;
 @Entity
 @Table(name="p_account_details")
 //@SQLRestriction("deleted=false")
+@Builder
 public class AccountModel {
     @Id
     @Column(name = "account_number")
